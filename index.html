@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Movie Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="landing" class="question-container">
+            <h1>Let's Have Some Fun! 💖</h1>
+        </div>
+        <div id="question1" class="question-container hidden">
+            <h2>What's your favorite way to spend a lazy Sunday?</h2>
+            <div class="options">
+                <button>A. Watching Netflix</button>
+                <button>B. Reading a book</button>
+                <button>C. Going for a walk</button>
+                <button>D. Sleeping in</button>
+            </div>
+        </div>
+        <div id="question2" class="question-container hidden">
+            <h2>If we could go anywhere right now, where would you want to go?</h2>
+            <div class="options">
+                <button>A. A beach paradise</button>
+                <button>B. A cozy cabin in the mountains</button>
+                <button>C. A city filled with history</button>
+                <button>D. Right where we are, as long as we’re together</button>
+            </div>
+        </div>
+        <div id="question3" class="question-container hidden">
+            <h2>Which of these snacks would you choose for a movie night?</h2>
+            <div class="options">
+                <button>A. Popcorn with extra butter</button>
+                <button>B. Pizza and chips</button>
+                <button>C. Ice cream sundaes</button>
+                <button>D. Fruit and chocolate</button>
+            </div>
+        </div>
+        <div id="question4" class="question-container hidden">
+            <h2>What’s the best movie genre for a cozy night in?</h2>
+            <div class="options">
+                <button>A. Romantic Comedy</button>
+                <button>B. Thriller / Mystery</button>
+                <button>C. Action-packed adventure</button>
+                <button>D. Animated (cartoons!)</button>
+            </div>
+        </div>
+        <div id="question5" class="question-container hidden">
+            <h2>Do you believe in love at first sight?</h2>
+            <div class="options">
+                <button>A. Yes, I totally do!</button>
+                <button>B. Maybe, I’m open to it.</button>
+                <button>C. Not really.</button>
+                <button>D. Only if it’s with the right person 😉</button>
+            </div>
+        </div>
+        <div id="final" class="question-container hidden">
+            <h2>Do you want to watch a movie?</h2>
+            <div class="options">
+                <button>A. Yes, let's do it! 🍿</button>
+                <button>B. Not yet, but let's plan for later!</button>
+            </div>
+        </div>
+    </div>
+    <audio id="background-music" src="background-music.mp3" loop autoplay></audio> 
+    <script>
+        const questions = document.querySelectorAll('.question-container');
+        
+        function showQuestion(index) {
+            questions.forEach((q, i) => {
+                q.classList.add('hidden');
+                if (i === index) {
+                    q.classList.remove('hidden');
+                    setTimeout(() => q.style.opacity = 1, 50);
+                }
+            });
+        }
+        
+        document.querySelectorAll('.options button').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    showQuestion(currentQuestion);
+                }
+            });
+        });
+        
+        showQuestion(currentQuestion);
+        </script>  <!-- Link to your JavaScript file -->  <!-- Add your JavaScript code here -->  <!-- Include the JavaScript file at the bottom of your HTML file to ensure it loads after the DOM has been fully loaded -->  <!-- The JavaScript code should handle the quiz functionality, including displaying the questions, handling user input, and updating the score -->  <!-- You can use any JavaScript library or framework you prefer for this task -->  <!-- Make sure to include
+    
+</body>
+</html>
